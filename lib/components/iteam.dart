@@ -4,21 +4,21 @@ import 'package:toku/models/number.dart';
 
 
 class forThreeItem extends StatelessWidget {
-  const forThreeItem({Key? key, required this.number,required this.color}) : super(key: key);
-  final Item number;
+  const forThreeItem({Key? key, required this.item,required this.color}) : super(key: key);
+  final Item item;
   final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 80,
       color: color,
       child:Row(
         children: [
           Container(
             color: Color(0xffFFFDE4),
             child: Image.asset(
-              number.image!,
+              item.image!,
               height: 100,
             ),
           ),
@@ -28,12 +28,12 @@ class forThreeItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(number.jname,
+                Text(item.jname,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18),
                 ),
-                Text(number.ename,
+                Text(item.ename,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18),
@@ -48,7 +48,7 @@ class forThreeItem extends StatelessWidget {
             onPressed: () {
               try{
                 final player = AudioPlayer();
-                player.play(AssetSource(number.sound));
+                player.play(AssetSource(item.sound));
               }catch(ex){
                 print(ex);
               }
@@ -73,7 +73,7 @@ class PhraseIteam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 60,
+      height: 80,
       color: color,
       child:Row(
         children: [
@@ -86,7 +86,7 @@ class PhraseIteam extends StatelessWidget {
                 Text(number.jname,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18),
+                      fontSize: 17),
                 ),
                 Text(number.ename,
                   style: TextStyle(
